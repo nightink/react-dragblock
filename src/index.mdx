@@ -1,0 +1,33 @@
+---
+name: 可拖拽滑动组件
+route: /
+order: 0
+---
+
+import DragBlock from './';
+
+## 功能调试
+
+<DragBlock onChange={obj => console.log(obj.left)}>
+  <div
+    style={{
+      width: '100px',
+      padding: '4px',
+      backgroundColor: '#a09c9c',
+      color: '#fff',
+    }}
+  >来啊～拽我啊</div>
+</DragBlock>
+
+## 禁止拖拽
+
+<DragBlock disabled>
+  <div
+    style={{
+      width: '100px',
+      padding: '4px',
+      backgroundColor: '#a09c9c',
+      color: '#fff',
+    }}
+  >来啊～拽我啊</div>
+</DragBlock>

@@ -1,0 +1,24 @@
+{
+  "name": "react-dragblock",
+  "description": "react drag block",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "father build",
+    "dev": "father doc dev",
+    "test": "father test"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "father": "^2.24.1"
+  },
+  "license": "MIT"
+}
