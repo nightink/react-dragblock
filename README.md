@@ -25,5 +25,7 @@ import DragBlock from 'react-dragblock';
 
 | 参数 | 说明 | 类型 | 默认值 | 注意 |
 | ---- | ---- | ---- | ------ | ---- |
-| disabled   | 禁止拖拽 | boolean  | false | 无 |
-| onChange   | 拖拽停止，会触发 onChange 函数 | Function({ left })  | 无 | 无 |
+| disabled | 禁止拖拽 | boolean | false | 无 |
+| horizontal | 仅水平方向拖拽 | boolean | false | 无 |
+| vertical | 仅垂直方向拖拽 | boolean | false | 无 |
+| onChange | 拖拽停止，会触发 onChange 函数 | Function({ left }) | 无 | 无 |

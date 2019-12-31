@@ -7,7 +7,8 @@
   "scripts": {
     "build": "father build",
     "dev": "father doc dev",
-    "test": "father test"
+    "test": "father test",
+    "lint": "eslint . --ext .jsx"
   },
   "files": [
     "dist"
@@ -18,6 +19,9 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-umi": "^1.6.0",
+    "eslint-plugin-flowtype": "^4.5.2",
     "father": "^2.24.1"
   },
   "license": "MIT"
