@@ -1,4 +1,10 @@
 
+0.2.1 / 2020-01-02
+==================
+
+**others**
+  * [[`16993be`](http://github.com/nightink/react-dragblock/commit/16993be96b2e30b2cc2625ca0e9c5c51b114f0a7)] - chore: 补充更多用例 (nightink <<chceyes@gmail.com>>)
+
 0.2.0 / 2019-12-31
 ==================
 
