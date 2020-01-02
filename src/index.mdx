@@ -18,6 +18,7 @@ import DragBlock from './';
     }}
   >来啊～拽我啊</div>
 </DragBlock>
+<div style={{ paddingBottom: '10px' }}></div>
 
 ## 水平拖拽
 
@@ -32,6 +33,19 @@ import DragBlock from './';
   >来啊～拽我啊</div>
 </DragBlock>
 
+<div style={{ paddingTop: '40px', paddingBottom: '20px' }}>
+  <DragBlock horizontal onChange={obj => console.log(obj.left)}>
+    <div
+      style={{
+        width: '100px',
+        padding: '4px',
+        backgroundColor: '#a09c9c',
+        color: '#fff',
+      }}
+    >来啊～拽我啊</div>
+  </DragBlock>
+</div>
+
 ## 垂直拖拽
 
 <DragBlock vertical onChange={obj => console.log(obj.left)}>
@@ -44,6 +58,7 @@ import DragBlock from './';
     }}
   >来啊～拽我啊</div>
 </DragBlock>
+<div style={{ paddingBottom: '10px' }}></div>
 
 ## 禁止拖拽
 
