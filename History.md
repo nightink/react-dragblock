@@ -1,4 +1,10 @@
 
+0.2.2 / 2020-01-09
+==================
+
+**features**
+  * [[`c97f4c8`](http://github.com/nightink/react-dragblock/commit/c97f4c818e0c246c26aa9a0f62b32fbb40e5fd37)] - feat: support defaultPosition (nightink <<chceyes@gmail.com>>)
+
 0.2.1 / 2020-01-02
 ==================
 
