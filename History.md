@@ -1,4 +1,10 @@
 
+0.3.1 / 2020-01-09
+==================
+
+**fixes**
+  * [[`44d4649`](http://github.com/nightink/react-dragblock/commit/44d46492518755a56f7b8f438dccd03bc62ea6ad)] - fix: onChange x bug (nightink <<chceyes@gmail.com>>)
+
 0.3.0 / 2020-01-09
 ==================
 
