@@ -1,9 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
-import './index.less';
+// import './index.less';
 
 const DragBlock = (props) => {
-  const { children, horizontal = false, vertical = false, disabled, onChange } = props;
+  const {
+    children,
+    horizontal = false,
+    vertical = false,
+    disabled,
+    defaultPosition,
+    onChange,
+  } = props;
   const dragblockEl = useRef(null);
 
   const obj = {};
@@ -17,23 +24,32 @@ const DragBlock = (props) => {
   const mouseUp = (e) => {
     active = false;
 
-    obj.left = document.defaultView.getComputedStyle(dragblockEl.current).left;
-    obj.top = document.defaultView.getComputedStyle(dragblockEl.current).top;
+    const nodeStyle = document.defaultView.getComputedStyle(dragblockEl.current);
+    const x = parseInt(nodeStyle.left);
+    const y = parseInt(nodeStyle.top);
+
     obj.currentX = e.clientX;
     obj.currentY = e.clientY;
 
-    onChange && onChange({
-      left: parseInt(obj.left),
-      top: parseInt(obj.left),
-    });
+    // console.log(x, y);
+    if (obj.x !==x || obj.y !== y) {
+      obj.x = x;
+      obj.y = y;
+      onChange && onChange({
+        x: parseInt(obj.y),
+        y: parseInt(obj.y),
+      });
+    }
   }
 
   const mouseMove = (e) => {
     if (!active) return;
 
-    const left = parseInt(obj.left) + e.clientX - obj.currentX;
-    const top = parseInt(obj.top) + e.clientY - obj.currentY;
+    const left = parseInt(obj.x) + e.clientX - obj.currentX;
+    const top = parseInt(obj.y) + e.clientY - obj.currentY;
 
+    let x = 0;
+    let y = 0;
     if (left >= 0 && !vertical) {
       dragblockEl.current.style.left = left + 'px';
     }
@@ -41,13 +57,18 @@ const DragBlock = (props) => {
     if (!horizontal) {
       dragblockEl.current.style.top = top + 'px';
     }
+
+    // console.log(x, y, obj.left, e.clientX, obj.currentX);
   };
 
   useEffect(() => {
     if (disabled) return;
 
-    obj.left = document.defaultView.getComputedStyle(dragblockEl.current).left;
-    obj.top = document.defaultView.getComputedStyle(dragblockEl.current).top;
+    const nodeStyle = document.defaultView.getComputedStyle(dragblockEl.current);
+    const x = parseInt(nodeStyle.left);
+    const y = parseInt(nodeStyle.top);
+    obj.x = defaultPosition?.x || x;
+    obj.y = defaultPosition?.y || y;
 
     window.document.addEventListener('mousemove', mouseMove);
     window.document.addEventListener('mouseup', mouseUp);
@@ -58,13 +79,36 @@ const DragBlock = (props) => {
     };
   });
 
-  return (
-    <div
-      className={ disabled ? '' : 'drag-block' }
-      ref={dragblockEl}
-      onMouseDown={mouseDown}
-    >{children}</div>
-  );
+  const Children = React.Children.only(children);
+  const classNameList = Children.props.className?.split(' ') || [];
+  if (!disabled) {
+    classNameList.push('react-dragblock');
+  }
+
+  return React.cloneElement(Children, {
+    className: classNameList.join(' '),
+    style: {
+      ...Children.props.style,
+      cursor: 'move',
+      position: 'absolute',
+      left: `${defaultPosition?.x}px`,
+      top: `${defaultPosition?.y}px`,
+    },
+    ref: dragblockEl,
+    onMouseDown: mouseDown,
+  });
+
+  // return (
+  //   <div
+  //     ref={dragblockEl}
+  //     className="react-dragblock"
+  //     onMouseDown={mouseDown}
+  //     style={{
+  //       left: `${defaultPosition?.x}px`,
+  //       top: `${defaultPosition?.y}px`,
+  //     }}
+  //   >{children}</div>
+  // );
 }
 
 export default DragBlock;

@@ -8,8 +8,9 @@ import DragBlock from './';
 
 ## 功能调试
 
-<DragBlock onChange={obj => console.log(obj.left)}>
+<DragBlock onChange={obj => console.log(obj)}>
   <div
+    className="fafa"
     style={{
       width: '100px',
       padding: '4px',
@@ -22,7 +23,7 @@ import DragBlock from './';
 
 ## 水平拖拽
 
-<DragBlock horizontal onChange={obj => console.log(obj.left)}>
+<DragBlock horizontal onChange={obj => console.log(obj)}>
   <div
     style={{
       width: '100px',
@@ -34,7 +35,7 @@ import DragBlock from './';
 </DragBlock>
 
 <div style={{ paddingTop: '40px', paddingBottom: '20px' }}>
-  <DragBlock horizontal onChange={obj => console.log(obj.left)}>
+  <DragBlock horizontal onChange={obj => console.log(obj)}>
     <div
       style={{
         width: '100px',
@@ -48,7 +49,7 @@ import DragBlock from './';
 
 ## 垂直拖拽
 
-<DragBlock vertical onChange={obj => console.log(obj.left)}>
+<DragBlock vertical onChange={obj => console.log(obj)}>
   <div
     style={{
       width: '100px',
@@ -62,7 +63,7 @@ import DragBlock from './';
 
 ## 禁止拖拽
 
-<DragBlock disabled>
+<DragBlock disabled defaultPosition={{ x: 430, y: 34 }}>
   <div
     style={{
       width: '100px',
