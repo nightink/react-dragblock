@@ -36,7 +36,7 @@ const DragBlock = (props) => {
       obj.x = x;
       obj.y = y;
       onChange && onChange({
-        x: parseInt(obj.y),
+        x: parseInt(obj.x),
         y: parseInt(obj.y),
       });
     }
