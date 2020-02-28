@@ -2,9 +2,6 @@
 0.3.3 / 2020-02-28
 ==================
 
-0.3.2 / 2020-02-28
-==================
-
 **fixes**
   * [[`4e35885`](http://github.com/nightink/react-dragblock/commit/4e35885d097c095b27b14098d3bfc94613b4cff1)] - fix: 修复鼠标未激活滑块导致鼠标弹起 onChange 事件触发 (nightink <<chceyes@gmail.com>>)
 

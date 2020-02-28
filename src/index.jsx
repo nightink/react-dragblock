@@ -34,7 +34,6 @@ const DragBlock = (props) => {
     obj.currentX = e.clientX;
     obj.currentY = e.clientY;
 
-    // console.log(x, y);
     if (obj.x !==x || obj.y !== y) {
       obj.x = x;
       obj.y = y;

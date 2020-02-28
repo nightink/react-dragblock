@@ -8,7 +8,8 @@
     "build": "father build",
     "dev": "father doc dev",
     "test": "father test",
-    "lint": "eslint . --ext .jsx"
+    "lint": "eslint . --ext .jsx",
+    "prepublish": "npm run build"
   },
   "files": [
     "dist"
