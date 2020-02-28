@@ -22,6 +22,9 @@ const DragBlock = (props) => {
   };
 
   const mouseUp = (e) => {
+    // 如果未激活 不应该执行鼠标事件
+    if (!active) return;
+
     active = false;
 
     const nodeStyle = document.defaultView.getComputedStyle(dragblockEl.current);
