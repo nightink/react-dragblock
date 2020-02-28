@@ -1,4 +1,10 @@
 
+0.3.4 / 2020-02-28
+==================
+
+**others**
+  * [[`431be3d`](http://github.com/nightink/react-dragblock/commit/431be3d8bb423f840827db4950d59074b5a66ce0)] - chore: 添加 prepublish 用于发布预编译 (nightink <<chceyes@gmail.com>>)
+
 0.3.3 / 2020-02-28
 ==================
 
